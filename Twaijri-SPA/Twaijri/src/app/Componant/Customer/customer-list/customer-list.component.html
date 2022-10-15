@@ -1,0 +1,40 @@
+
+
+<section style="padding-top: 120px ;" *ngIf="Customer!== undefined && Customer.length > 0;else emptyTemp">
+    <div class="row text-center">
+        <p class="list-spectacle-title">Customers</p>
+      </div>
+      <div class="row justify-content-center shows-list">
+        <div class="col-3 m-3" *ngFor="let x of Customer">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/images/download.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">{{x.customerName}}</li>
+                  <li class="list-group-item">{{x.phoneNumber}}</li>
+                </ul>
+                <div class="card-body" style="display: flex;justify-content: space-around;">
+                  <button class="btn btn-success pr-1" (click)="openModal(x.customerId)" >Update</button>
+                  <button class="btn btn-danger" (click)="DeleteCustomer(x.customerId)">Delete</button>
+                  <!-- <button class="btn btn-warning" [routerLink]="['/Profile',x.customerId]" >Profile</button> -->
+                </div>
+              </div>
+        </div>
+        </div>
+    <div>
+        <app-pagination class="mb-2" (pageChange)="pageChange($event)"
+            [pageNumber]="formCustomer.getRawValue().pageNumber" [pageSize]="formCustomer.getRawValue().pageSize"
+            [total]="totalCustomer">
+        </app-pagination>
+    </div>
+</section>
+
+<ng-template #emptyTemp>
+    <div class="text-center contein my-3">
+        <img alt="" class="un-draw"  width="260px" src="assets/images/no-data.svg">
+        <h5 class="py-3 text-muted">There is no data to show</h5>
+    </div>
+</ng-template>

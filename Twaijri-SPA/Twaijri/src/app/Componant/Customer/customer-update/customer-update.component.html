@@ -1,0 +1,17 @@
+<section *ngIf="Data !== null">
+    <div class="">
+        <div class="row justify-content-center">
+            Customer Data
+        </div>
+        <div class="row justify-content-center" style="text-align: center;">
+            <form class="pb-3" [formGroup]="UpdateForm" (ngSubmit)="updateUser(Data.customerId)">
+                <label for="CustomerName">CustomerName:</label><br>
+                <input type="text" id="CustomerName"  formControlName="CustomerName" value="{{Data.customerName}}"  name="CustomerName"><br>
+                <label for="phoneNumber">Phone Number:</label><br>
+                <input type="text" id="phoneNumber" formControlName="PhoneNumber" value="{{Data.phoneNumber}}"  name="PhonNumber"><br><br>
+                <input  type="submit" value="Submit">
+              </form>
+        </div>
+    </div>
+</section>
+

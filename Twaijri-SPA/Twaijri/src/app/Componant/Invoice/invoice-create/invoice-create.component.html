@@ -1,0 +1,29 @@
+<div class="Main_content">
+    <div class="container Custom_style">
+      <!-- <div class="imge" style="width: 31%;">
+        <img class="Image_style" src="../../../../assets/Images/1.jpg">
+      </div> -->
+      <div class="main">
+        <div class="login">
+          <form [formGroup]="UpdateForm" (ngSubmit)="CreateInvoice()">
+            <label for="chk" aria-hidden="true">Invoice</label>
+            <label>Customer ID</label>
+            <input  formControlName="CustomerId" type="text" name="CustomerId" placeholder="Nme"  required="">
+            <label>Date</label>
+            <input formControlName="InvoiceDate" type="date" name="Id" placeholder="" required="">
+            <label>Value</label>
+            <input formControlName="Value" type="text" name="Value" placeholder="" required="">
+            <label>State</label>
+            <!-- <input formControlName="State" type="text" name="State" placeholder=" " required=""> -->
+            <select class="options" formControlName="State">        
+                <!-- <option value="0">Choose</option> -->
+                <option value="notPaid">Not Paid</option> 
+                <option value="paid">Paid</option> 
+              </select>
+            
+            <button>Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

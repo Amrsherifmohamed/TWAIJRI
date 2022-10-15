@@ -1,0 +1,45 @@
+<div class="Main_content">
+    <div class="container Custom_style">
+      <!-- <div class="imge" style="width: 31%;">
+        <img class="Image_style" src="../../../../assets/Images/1.jpg">
+      </div> -->
+      <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+  
+        <div class="signup">
+          <form [formGroup]="loginForm" (ngSubmit)="Login()">
+            <label for="chk" aria-hidden="true">Login</label>
+            <input formControlName="CustomerName"  name="CustomerName" placeholder="Name" required>
+            <div *ngIf="loginForm.get('CustomerName')?.touched && loginForm.get('CustomerName')?.invalid" class="alert alert-danger Nofication">
+                <div *ngIf="loginForm.get('CustomerName')?.hasError('required')">Email is required.</div>
+            </div>
+            <input formControlName="password" type="password" name="Password" placeholder="Password" required>
+              <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="alert alert-danger Nofication">
+                <div *ngIf="loginForm.get('password')?.hasError('required')">password is required.</div>
+            </div>
+            <button>Login</button>
+          </form>
+        </div>
+        <div class="login">
+          <form [formGroup]="registerForm" (ngSubmit)="Register()">
+            <label for="chk" aria-hidden="true">Sign up</label>
+            <input formControlName="CustomerName" type="text" name="CustomerName" placeholder="Name" required="">
+              <div *ngIf="registerForm.get('CustomerName')?.touched && registerForm.get('CustomerName')?.invalid" class="alert alert-danger Nofication">
+                <div *ngIf="registerForm.get('CustomerName')?.hasError('required')">firstname is required.</div>
+              </div>
+            <input formControlName="PhoneNumber" type="text" name="PhoneNumber" placeholder="Phone Number" required="">
+              <div *ngIf="registerForm.get('PhoneNumber')?.touched && registerForm?.get('PhoneNumber')?.invalid" class="alert alert-danger Nofication">
+                <div *ngIf="registerForm.get('PhoneNumber')?.hasError('required')">lastname is required.</div>
+              </div>
+            <input formControlName="password" type="password" name="pswd" placeholder="Password" required="">
+              <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid" class="alert alert-danger Nofication">
+                <div *ngIf="registerForm.get('password')?.hasError('required')">password is required.</div>
+                <div *ngIf="registerForm.get('password')?.hasError('minlength')">password Should lessthen 6</div>
+              </div>
+            <button>Sign up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

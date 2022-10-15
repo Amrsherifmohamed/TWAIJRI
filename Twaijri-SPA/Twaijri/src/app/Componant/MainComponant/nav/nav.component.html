@@ -1,0 +1,43 @@
+
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-flex align-items-center fixed-top" >
+        <!-- style="background: chocolate;" -->
+        
+          <div class="container d-flex justify-content-center justify-content-md-between">
+    
+              <div class="contact-info d-flex align-items-center">
+                  <i class="bi bi-phone d-flex align-items-center"><span>01208258533</span></i>
+                  <i class="bi bi-clock d-flex align-items-center ms-4"><span> Mon-Sat: 11AM - 23PM</span></i>
+              </div>
+    
+              <div class="languages d-none d-md-flex align-items-center">
+                  <ul>
+                      <li>En</li>
+                      <li><a href="#">De</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+    
+      <!-- ======= Header ======= -->
+      <header id="header" class="fixed-top d-flex align-items-cente">
+          <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+    
+              <h1 class="logo me-auto me-lg-0"><a href="index.html">Twaijri</a></h1>
+              <!-- Uncomment below if you prefer to use an image logo -->
+              <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    
+              <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li *ngIf="auth.loggedIn()"><a class="nav-link scrollto" [routerLink]="['/Customer']">Customer</a></li>
+                    <li *ngIf="auth.loggedIn()"><a class="nav-link scrollto" [routerLink]="['/Invoice']">Invoice</a></li>
+                </ul>
+                  <i class="bi bi-list mobile-nav-toggle"></i>
+              </nav>
+              <!-- .navbar -->
+              <a *ngIf="!auth.loggedIn()" class="book-a-table-btn scrollto d-none d-lg-flex" (click)="openModal()">Login and Register</a>
+              <a *ngIf="auth.loggedIn()" class="book-a-table-btn scrollto d-none d-lg-flex" (click)="LogOut()">Logout</a>
+    
+          </div>
+      </header>
+      <!-- End Header -->
